@@ -15,7 +15,7 @@ const projects: Project[] = [
     title: "IVM Platform",
     description:
       "Config-driven platform where database defines what to show and what to do. Frontend renders templates based on backend configuration.",
-    tags: ["Next.js 15", "Django", "PostgreSQL", "Docker"],
+    tags: ["Next.js 16", "Django", "PostgreSQL", "Docker"],
   },
   {
     title: "iPaaS Platform",

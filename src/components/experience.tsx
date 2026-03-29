@@ -16,18 +16,18 @@ const roles: Role[] = [
   {
     title: "Senior Full Stack Developer",
     company: "Isha Foundation IT",
-    period: "May 2024 - Present",
+    period: "July 2025 - Present",
     bullets: [
-      "Architecting a config-driven platform (IVM) using Django + Next.js 15 with App Router",
+      "Architecting a config-driven platform (IVM) using Django + Next.js 16 with App Router",
       "Pioneering AI-agent orchestrated development workflows \u2014 designing and managing AI agents for code generation, review, and testing",
       "Building dynamic view/action systems driven entirely by database configuration",
     ],
-    tech: ["Next.js 15", "Django", "PostgreSQL", "Docker", "AI/LLM Integration"],
+    tech: ["Next.js 16", "Django", "PostgreSQL", "Docker", "AI/LLM Integration"],
   },
   {
     title: "Senior Full Stack Developer",
     company: "HappyFox Technologies",
-    period: "May 2024 - Nov 2024",
+    period: "May 2024 - June 2025",
     bullets: [
       "Led a team of Full Stack Developers and QA engineers to build an internal iPaaS platform that cut integration development time by 50%",
       "Took full ownership of the frontend while contributing hands-on to backend using Python and Django ORM",
@@ -114,7 +114,7 @@ export default function Experience() {
                       key={bullet}
                       className="text-text-secondary text-sm leading-relaxed flex gap-2"
                     >
-                      <span className="text-accent mt-1.5 shrink-0">
+                      <span className="text-accent shrink-0">
                         &bull;
                       </span>
                       {bullet}

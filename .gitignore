@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# personal docs
+/docs/career-action-plan.md
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

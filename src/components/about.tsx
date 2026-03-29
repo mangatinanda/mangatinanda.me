@@ -3,6 +3,7 @@
 import SectionWrapper from "./section-wrapper";
 import { motion } from "framer-motion";
 import { Code2, Rocket, Brain, Clock } from "lucide-react";
+import Image from "next/image";
 
 const stats = [
   { icon: Clock, label: "10+ Years Experience" },
@@ -25,12 +26,15 @@ export default function About() {
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <div className="w-28 h-28 rounded-full bg-gradient-to-br from-accent to-accent-purple p-[2px]">
-            <div className="w-full h-full rounded-full bg-surface flex items-center justify-center">
-              <span className="text-3xl font-bold bg-gradient-to-r from-accent to-accent-purple bg-clip-text text-transparent">
-                NM
-              </span>
-            </div>
+          <div className="w-32 h-32 rounded-full bg-gradient-to-br from-accent to-accent-purple p-[2px]">
+            <Image
+              src="/nanda.jpg"
+              alt="Nanda Kumar Mangati"
+              width={128}
+              height={128}
+              className="w-full h-full rounded-full object-cover"
+              priority
+            />
           </div>
         </motion.div>
 
