@@ -29,15 +29,24 @@ const roles: Role[] = [
   {
     title: "Full Stack Developer",
     company: "HappyFox Technologies LLP",
-    period: "May 2015 - June 2025",
+    period: "2021 - June 2025",
     bullets: [
-      "A decade across the HappyFox suite (Helpdesk, Workflows, BI), growing from front-end into full-stack and a technical leadership role",
-      "Led the full UI revamp of the enterprise helpdesk into a performant Ember.js single-page app, shipping via weekly-to-daily CI/CD",
-      "Designed and built a reusable JavaScript SDK for third-party integrations across project management, CRM, e-commerce, social, and voice platforms",
       "Led a team of full-stack developers and QA to build an internal iPaaS platform that cut integration development time by 50%; owned its frontend and contributed backend (Python, Django)",
-      "Designed APIs, schemas, and services; ran frontend code reviews and mentored junior developers",
+      "Designed APIs, database schemas, and backend services across the Helpdesk, Workflows, and BI products",
+      "Ran frontend code reviews and mentored junior developers on best practices and design",
     ],
-    tech: ["Python", "Django", "Ember.js", "JavaScript", "PostgreSQL", "ElasticSearch", "Redis"],
+    tech: ["Python", "Django", "React", "PostgreSQL", "ElasticSearch", "Redis", "Celery"],
+  },
+  {
+    title: "Front-End Developer",
+    company: "HappyFox Technologies LLP",
+    period: "May 2015 - 2021",
+    bullets: [
+      "Played a key role in the full UI revamp of the enterprise helpdesk into a performant Ember.js single-page app, shipping via weekly-to-daily CI/CD",
+      "Designed and built a reusable JavaScript SDK that streamlined third-party integrations",
+      "Built integrations across project management, CRM, e-commerce, social media, and voice platforms",
+    ],
+    tech: ["Ember.js", "JavaScript", "jQuery", "HTML/CSS", "REST APIs"],
   },
   {
     title: "Programmer Analyst",
