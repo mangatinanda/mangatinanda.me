@@ -2,7 +2,7 @@
 
 import SectionWrapper from "./section-wrapper";
 import { motion } from "framer-motion";
-import { Mail, Phone, Globe, Code } from "lucide-react";
+import { Mail, Globe, Code } from "lucide-react";
 
 const links = [
   {
@@ -22,12 +22,6 @@ const links = [
     label: "GitHub",
     value: "github.com/mangatinanda",
     href: "https://github.com/mangatinanda",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91-0000000000",
-    href: "tel:+910000000000",
   },
 ];
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Mail, Download } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -38,7 +38,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            Senior Full Stack Developer
+            Senior Full-Stack Engineer
           </motion.h2>
 
           <motion.p
@@ -70,6 +70,15 @@ export default function Hero() {
             >
               Get In Touch
               <Mail size={16} />
+            </a>
+            <a
+              href="/nanda-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border-color hover:border-text-secondary text-foreground text-sm font-medium rounded-lg transition-colors"
+            >
+              Download Resume
+              <Download size={16} />
             </a>
           </motion.div>
         </motion.div>

@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mangatinanda.me"),
-  title: "Nanda Kumar Mangati | Senior Full Stack Developer",
+  title: "Nanda Kumar Mangati | Senior Full-Stack Engineer",
   description:
-    "Senior Full Stack Developer with 10+ years of experience building scalable platforms with Django, Next.js, and AI-powered development workflows.",
+    "Senior Full-Stack Engineer with 10+ years of experience building scalable platforms with Django, Next.js, and AI-powered development workflows.",
   keywords: [
     "Nanda Kumar Mangati",
     "Full Stack Developer",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Nanda Kumar Mangati" }],
   openGraph: {
-    title: "Nanda Kumar Mangati | Senior Full Stack Developer",
+    title: "Nanda Kumar Mangati | Senior Full-Stack Engineer",
     description:
       "Building scalable platforms and orchestrating AI-powered development workflows. 10+ years of shipping products that matter.",
     url: "https://mangatinanda.me",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nanda Kumar Mangati | Senior Full Stack Developer",
+    title: "Nanda Kumar Mangati | Senior Full-Stack Engineer",
     description:
       "Building scalable platforms and orchestrating AI-powered development workflows.",
   },

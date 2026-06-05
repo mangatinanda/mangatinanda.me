@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 // Site-wide Open Graph / Twitter card image. Any route without its own
 // opengraph-image inherits this one, so shared links stop rendering blank.
-export const alt = "Nanda Kumar Mangati — Senior Full Stack Developer";
+export const alt = "Nanda Kumar Mangati, Senior Full-Stack Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -26,7 +26,7 @@ export default function Image() {
           Nanda Kumar Mangati
         </div>
         <div style={{ fontSize: 38, color: "#a1a1a1", marginTop: 24 }}>
-          Senior Full Stack Developer
+          Senior Full-Stack Engineer
         </div>
         <div style={{ fontSize: 28, color: "#3b82f6", marginTop: 48 }}>
           Django · Next.js · AI-powered development workflows
