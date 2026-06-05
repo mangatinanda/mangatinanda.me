@@ -85,8 +85,9 @@ export default async function BlogPostPage({
           </div>
         </header>
 
-        {/* Placeholder content */}
-        <div className="prose prose-invert max-w-none">
+        {post.content ? (
+          <ArticleBody content={post.content} />
+        ) : (
           <div className="p-8 rounded-xl bg-surface border border-border-color text-center">
             <p className="text-text-secondary text-lg mb-2">
               Full article coming soon.
@@ -96,7 +97,7 @@ export default async function BlogPostPage({
               full content.
             </p>
           </div>
-        </div>
+        )}
 
         <div className="mt-12 pt-8 border-t border-border-color">
           <Link
@@ -107,6 +108,63 @@ export default async function BlogPostPage({
           </Link>
         </div>
       </article>
+    </div>
+  );
+}
+
+// Lightweight renderer for the `content` field: blank-line-separated blocks.
+// Supports `## h2`, `### h3`, `- `/`* ` bullet lists, and paragraphs.
+// (Deliberately dependency-free; swap for react-markdown if posts get richer.)
+function ArticleBody({ content }: { content: string }) {
+  const blocks = content.trim().split(/\n\s*\n/);
+
+  return (
+    <div className="flex flex-col gap-5">
+      {blocks.map((raw, i) => {
+        const block = raw.trim();
+
+        if (block.startsWith("### ")) {
+          return (
+            <h3 key={i} className="text-lg font-semibold text-foreground mt-4">
+              {block.slice(4)}
+            </h3>
+          );
+        }
+        if (block.startsWith("## ")) {
+          return (
+            <h2
+              key={i}
+              className="text-xl md:text-2xl font-bold text-foreground mt-6"
+            >
+              {block.slice(3)}
+            </h2>
+          );
+        }
+
+        const lines = block
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean);
+
+        if (lines.length > 0 && lines.every((l) => /^[-*]\s+/.test(l))) {
+          return (
+            <ul
+              key={i}
+              className="list-disc pl-5 flex flex-col gap-2 text-text-secondary leading-relaxed"
+            >
+              {lines.map((l, j) => (
+                <li key={j}>{l.replace(/^[-*]\s+/, "")}</li>
+              ))}
+            </ul>
+          );
+        }
+
+        return (
+          <p key={i} className="text-text-secondary text-base leading-relaxed">
+            {block}
+          </p>
+        );
+      })}
     </div>
   );
 }

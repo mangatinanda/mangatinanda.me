@@ -2,7 +2,6 @@
 
 import SectionWrapper from "./section-wrapper";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
 
 interface Project {
   title: string;
@@ -59,10 +58,6 @@ export default function Projects() {
               <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
                 {project.title}
               </h3>
-              <ExternalLink
-                size={16}
-                className="text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity mt-1"
-              />
             </div>
 
             <p className="text-text-secondary text-sm leading-relaxed mb-4">

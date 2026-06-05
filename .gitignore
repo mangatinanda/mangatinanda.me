@@ -36,8 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
-# personal docs
+# personal docs (career strategy stays out of git — lives in ~/notes Obsidian vault)
 /docs/career-action-plan.md
+/docs/career-plan-*.md
+/MEMORY.md
 
 # typescript
 *.tsbuildinfo

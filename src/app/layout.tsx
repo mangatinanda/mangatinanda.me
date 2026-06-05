@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mangatinanda.me"),
   title: "Nanda Kumar Mangati | Senior Full Stack Developer",
   description:
     "Senior Full Stack Developer with 10+ years of experience building scalable platforms with Django, Next.js, and AI-powered development workflows.",
