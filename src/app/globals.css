@@ -9,6 +9,11 @@
   --text-secondary: #a1a1a1;
   --accent: #3b82f6;
   --accent-hover: #60a5fa;
+  /* Filled-button background: white text on it must pass WCAG AA (4.5:1).
+     #2563eb = 5.17:1, hover #1d4ed8 is darker still. Keep #3b82f6 for
+     text/borders on dark backgrounds only. */
+  --accent-solid: #2563eb;
+  --accent-solid-hover: #1d4ed8;
   --accent-purple: #8b5cf6;
 }
 
@@ -21,6 +26,8 @@
   --color-text-secondary: var(--text-secondary);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
+  --color-accent-solid: var(--accent-solid);
+  --color-accent-solid-hover: var(--accent-solid-hover);
   --color-accent-purple: var(--accent-purple);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -32,8 +39,157 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Smooth scrolling is motion — only for users who haven't opted out. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Anchored sections clear the fixed 4rem nav. */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Scroll reveal (see components/reveal.tsx). Hidden state is applied by JS
+   only, so server HTML and no-JS visitors always see content. */
+[data-reveal] {
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out both;
+  }
+
+  .animation-delay-150 {
+    animation-delay: 150ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-450 {
+    animation-delay: 450ms;
+  }
+
+  .animate-bounce-soft {
+    animation: bounce-soft 2s ease-in-out infinite;
+  }
+
+  .menu-in {
+    animation: menu-in 0.2s ease-out both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    transition: none;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Article code blocks (rehype-highlight output). */
+pre {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+code {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+:not(pre) > code {
+  background: var(--surface-light);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.85em;
+  color: var(--foreground);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #7f848e;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #c678dd;
+}
+
+.hljs-string,
+.hljs-addition {
+  color: #98c379;
+}
+
+.hljs-number,
+.hljs-deletion {
+  color: #d19a66;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-name {
+  color: #61afef;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-variable {
+  color: #e5c07b;
+}
+
+.hljs-built_in,
+.hljs-type,
+.hljs-symbol {
+  color: #56b6c2;
 }
 
 /* Custom scrollbar */

@@ -1,8 +1,5 @@
-"use client";
-
-import SectionWrapper from "./section-wrapper";
-import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
+import SectionWrapper from "./section-wrapper";
 
 interface Role {
   title: string;
@@ -24,7 +21,14 @@ const roles: Role[] = [
       "Set up frontend quality infrastructure with Storybook, Jest, Testing Library, and MSW",
       "Build with AI coding agents as part of my daily workflow",
     ],
-    tech: ["Next.js", "TypeScript", "TanStack", "Tailwind CSS", "Django", "AI coding agents"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "TanStack",
+      "Tailwind CSS",
+      "Django",
+      "AI coding agents",
+    ],
   },
   {
     title: "Full Stack Developer",
@@ -35,7 +39,15 @@ const roles: Role[] = [
       "Designed APIs, database schemas, and backend services across the Helpdesk, Workflows, and BI products",
       "Ran frontend code reviews and mentored junior developers on best practices and design",
     ],
-    tech: ["Python", "Django", "React", "PostgreSQL", "ElasticSearch", "Redis", "Celery"],
+    tech: [
+      "Python",
+      "Django",
+      "React",
+      "PostgreSQL",
+      "ElasticSearch",
+      "Redis",
+      "Celery",
+    ],
   },
   {
     title: "Front-End Developer",
@@ -71,18 +83,14 @@ export default function Experience() {
         <div className="absolute left-[19px] top-2 bottom-2 w-px bg-border-color hidden md:block" />
 
         <div className="flex flex-col gap-10">
-          {roles.map((role, i) => (
-            <motion.div
+          {roles.map((role) => (
+            <div
               key={`${role.company}-${role.period}`}
               className="relative flex gap-6"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
             >
               {/* Timeline dot */}
               <div className="hidden md:flex shrink-0 w-10 h-10 rounded-full bg-surface border border-border-color items-center justify-center mt-1">
-                <Briefcase size={16} className="text-accent" />
+                <Briefcase size={16} className="text-accent" aria-hidden />
               </div>
 
               {/* Content */}
@@ -105,9 +113,7 @@ export default function Experience() {
                       key={bullet}
                       className="text-text-secondary text-sm leading-relaxed flex gap-2"
                     >
-                      <span className="text-accent shrink-0">
-                        &bull;
-                      </span>
+                      <span className="text-accent shrink-0">&bull;</span>
                       {bullet}
                     </li>
                   ))}
@@ -124,7 +130,7 @@ export default function Experience() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,30 +1,11 @@
-export interface BlogPost {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  readTime: string;
-  published: boolean;
-  tags: string[];
-  /**
-   * Markdown-ish body. Paragraphs are separated by a blank line. Only flip a
-   * post to `published: true` once this is populated, otherwise the post page
-   * renders a placeholder, which reads as unfinished to recruiters.
-   */
-  content?: string;
-}
+---
+title: "What MCP Gets Right (and Where It's Overhyped)"
+description: "A working engineer's take on the Model Context Protocol: the real problem it solves, the three primitives that matter, and where the hype outruns reality."
+publishedAt: "2026-06-05"
+tags: ["AI", "MCP", "Architecture"]
+---
 
-export const blogPosts: BlogPost[] = [
-  {
-    slug: "what-mcp-gets-right-and-where-its-overhyped",
-    title: "What MCP Gets Right (and Where It's Overhyped)",
-    description:
-      "A working engineer's take on the Model Context Protocol: the real problem it solves, the three primitives that matter, and where the hype outruns reality.",
-    date: "June 2026",
-    readTime: "7 min read",
-    published: true,
-    tags: ["AI", "MCP", "Architecture"],
-    content: `## The problem MCP actually solves
+## The problem MCP actually solves
 
 Every team building with LLMs runs into the same wall. You want the model to reach your stuff: your database, your docs, your ticketing system, your internal APIs. So you write an integration. Then a new model shows up, or a new tool, and you write it again. With N apps and M data sources you end up maintaining N times M integrations, and every one of them breaks on its own schedule.
 
@@ -78,47 +59,4 @@ If I were wiring MCP into something real, say exposing a Django app's data to an
 
 Then I'd hold the whole thing to a single question: does the model get measurably more useful, judged against an eval set instead of a gut feeling? If the answer is no, MCP isn't your problem, and bolting on more tools won't fix it.
 
-That's the lens I'd hand anyone weighing it up. MCP is a good standard solving a real N-times-M problem. It is not a shortcut around the unglamorous work: designing tools well, building retrieval that actually retrieves, and writing evals that tell you the truth. Get those right and MCP makes them portable. Skip them, and all it does is help a model reach your mess faster.`,
-  },
-  {
-    slug: "orchestrating-ai-agents-for-software-development",
-    title: "Orchestrating AI Agents for Software Development",
-    description:
-      "How I'm using AI agents to architect, code, review, and test, and what I've learned about the future of development workflows.",
-    date: "Coming Soon",
-    readTime: "8 min read",
-    // Stopgap (2026-06): was published with no body, so recruiters landed on a
-    // "coming soon" placeholder. Unpublished until the `content` field is
-    // written. See the personal plan in ~/notes/career-plan-2026-H2.md.
-    published: false,
-    tags: ["AI", "Development Workflows", "Productivity"],
-  },
-  {
-    slug: "building-config-driven-platforms-with-django",
-    title: "Building Config-Driven Platforms with Django",
-    description:
-      "Why database-driven configuration beats hardcoded views, and how to architect a flexible platform.",
-    date: "Coming Soon",
-    readTime: "6 min read",
-    published: false,
-    tags: ["Django", "Architecture", "Backend"],
-  },
-  {
-    slug: "from-frontend-to-full-stack-a-10-year-journey",
-    title: "From Frontend to Full Stack: A 10-Year Journey",
-    description:
-      "Lessons learned transitioning from Ember.js frontend work to full-stack Python/Django development.",
-    date: "Coming Soon",
-    readTime: "10 min read",
-    published: false,
-    tags: ["Career", "Full Stack", "Reflections"],
-  },
-];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return blogPosts.find((post) => post.slug === slug);
-}
-
-export function getPublishedPosts(): BlogPost[] {
-  return blogPosts.filter((post) => post.published);
-}
+That's the lens I'd hand anyone weighing it up. MCP is a good standard solving a real N-times-M problem. It is not a shortcut around the unglamorous work: designing tools well, building retrieval that actually retrieves, and writing evals that tell you the truth. Get those right and MCP makes them portable. Skip them, and all it does is help a model reach your mess faster.

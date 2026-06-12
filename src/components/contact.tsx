@@ -1,8 +1,5 @@
-"use client";
-
-import SectionWrapper from "./section-wrapper";
-import { motion } from "framer-motion";
 import { Mail, Globe, Code } from "lucide-react";
+import SectionWrapper from "./section-wrapper";
 
 const links = [
   {
@@ -39,25 +36,18 @@ export default function Contact() {
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-        {links.map((link, i) => (
-          <motion.a
+        {links.map((link) => (
+          <a
             key={link.label}
             href={link.href}
             target={link.href.startsWith("http") ? "_blank" : undefined}
             rel={
-              link.href.startsWith("http")
-                ? "noopener noreferrer"
-                : undefined
+              link.href.startsWith("http") ? "noopener noreferrer" : undefined
             }
-            className="flex items-center gap-4 p-4 rounded-xl bg-surface border border-border-color hover:border-accent/40 transition-all duration-300 group"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.4 }}
-            whileHover={{ y: -2 }}
+            className="flex items-center gap-4 p-4 rounded-xl bg-surface border border-border-color hover:border-accent/40 transition-all duration-300 hover:-translate-y-0.5 group"
           >
             <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-              <link.icon size={18} className="text-accent" />
+              <link.icon size={18} className="text-accent" aria-hidden />
             </div>
             <div>
               <p className="text-xs text-text-secondary">{link.label}</p>
@@ -65,7 +55,7 @@ export default function Contact() {
                 {link.value}
               </p>
             </div>
-          </motion.a>
+          </a>
         ))}
       </div>
     </SectionWrapper>

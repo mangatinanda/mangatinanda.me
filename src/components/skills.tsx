@@ -1,18 +1,12 @@
-"use client";
-
+import { Monitor, Server, Database, Cloud, Brain, Users } from "lucide-react";
 import SectionWrapper from "./section-wrapper";
-import { motion } from "framer-motion";
-import {
-  Monitor,
-  Server,
-  Database,
-  Cloud,
-  Brain,
-  Users,
-} from "lucide-react";
 
 interface SkillCategory {
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  icon: React.ComponentType<{
+    size?: number;
+    className?: string;
+    "aria-hidden"?: boolean;
+  }>;
   title: string;
   skills: string[];
 }
@@ -76,17 +70,13 @@ export default function Skills() {
       </h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {categories.map((cat, i) => (
-          <motion.div
+        {categories.map((cat) => (
+          <div
             key={cat.title}
             className="p-6 rounded-xl bg-surface border border-border-color hover:border-accent/30 transition-colors"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08, duration: 0.4 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <cat.icon size={20} className="text-accent" />
+              <cat.icon size={20} className="text-accent" aria-hidden />
               <h3 className="text-base font-semibold text-foreground">
                 {cat.title}
               </h3>
@@ -101,7 +91,7 @@ export default function Skills() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </SectionWrapper>

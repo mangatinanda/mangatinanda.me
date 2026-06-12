@@ -41,6 +41,10 @@ yarn-error.log*
 /docs/career-plan-*.md
 /MEMORY.md
 
+# agent config & memory
+.claude/
+.mcp.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

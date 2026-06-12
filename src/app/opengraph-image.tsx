@@ -8,34 +8,32 @@ export const contentType = "image/png";
 
 export default function Image() {
   return new ImageResponse(
-    (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          height: "100%",
-          background: "#0a0a0a",
-          color: "#ededed",
-          padding: "80px",
-          justifyContent: "center",
-          fontFamily: "sans-serif",
-        }}
-      >
-        <div style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.1 }}>
-          Nanda Kumar Mangati
-        </div>
-        <div style={{ fontSize: 38, color: "#a1a1a1", marginTop: 24 }}>
-          Senior Full-Stack Engineer
-        </div>
-        <div style={{ fontSize: 28, color: "#3b82f6", marginTop: 48 }}>
-          Django · Next.js · AI-powered development workflows
-        </div>
-        <div style={{ fontSize: 24, color: "#a1a1a1", marginTop: 56 }}>
-          mangatinanda.me
-        </div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+        height: "100%",
+        background: "#0a0a0a",
+        color: "#ededed",
+        padding: "80px",
+        justifyContent: "center",
+        fontFamily: "sans-serif",
+      }}
+    >
+      <div style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.1 }}>
+        Nanda Kumar Mangati
       </div>
-    ),
+      <div style={{ fontSize: 38, color: "#a1a1a1", marginTop: 24 }}>
+        Senior Full-Stack Engineer &middot; AI-Native Platforms
+      </div>
+      <div style={{ fontSize: 28, color: "#3b82f6", marginTop: 48 }}>
+        Django &middot; Next.js &middot; AI-powered development workflows
+      </div>
+      <div style={{ fontSize: 24, color: "#a1a1a1", marginTop: 56 }}>
+        mangatinanda.me
+      </div>
+    </div>,
     { ...size },
   );
 }
