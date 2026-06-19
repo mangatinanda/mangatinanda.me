@@ -15,6 +15,22 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Outlay — Household Expense Tracker",
+    description:
+      "My family had no shared way to track who paid for what, so I built and shipped a multi-user PWA — Google + passcode auth, strict per-household data isolation, a charts dashboard, and CSV/XLSX/PDF export — that my family uses daily. 100+ tests (Vitest + Playwright), husky pre-commit, and CI on every push.",
+    tags: [
+      "Next.js 16",
+      "Drizzle/SQLite (Turso)",
+      "Auth.js",
+      "PWA",
+      "Vitest/Playwright",
+    ],
+    links: [
+      { label: "Live", href: "https://outlay.mangatinanda.me" },
+      { label: "Source", href: "https://github.com/mangatinanda/outlay" },
+    ],
+  },
+  {
     title: "IVM Volunteer Platform",
     description:
       "Isha's internal volunteer-management platform. Own the entire Next.js frontend: config-driven screens defined by backend data, virtualized data-heavy admin views (TanStack Table/Query), rich-text editing, drag-and-drop, NextAuth, and a quality setup with Storybook, Jest, and MSW.",
