@@ -40,6 +40,10 @@ yarn-error.log*
 /docs/career-action-plan.md
 /docs/career-plan-*.md
 /MEMORY.md
+# tailored/working resume drafts (application-specific, keep off the public portfolio)
+/resume/
+# interview prep docs (private, local-only)
+/interview/
 
 # agent config & memory
 .claude/
