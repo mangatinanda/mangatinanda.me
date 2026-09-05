@@ -175,6 +175,16 @@ function ArticleBody({ content }: { content: string }) {
               {children}
             </a>
           ),
+          img: ({ src, alt }) => (
+            // eslint-disable-next-line @next/next/no-img-element -- static SVG in /public; next/image adds nothing for vector art
+            <img
+              src={typeof src === "string" ? src : undefined}
+              alt={alt ?? ""}
+              loading="lazy"
+              decoding="async"
+              className="w-full rounded-xl border border-border-color"
+            />
+          ),
           blockquote: ({ children }) => (
             <blockquote className="border-l-2 border-accent pl-4 text-text-secondary italic">
               {children}
